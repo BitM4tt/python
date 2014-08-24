@@ -110,7 +110,7 @@ guess=""
 used=[]
 guesses=0
 give_up=False
-while so_far!=word and give_up==False:
+while so_far!=word and give_up==False and lives>0:
     guess=input("What is your guess?")
     if guess in word:
         print("Yes!",guess,"is in the word!")
