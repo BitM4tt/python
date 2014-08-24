@@ -115,12 +115,11 @@ while so_far!=word and give_up==False:
     if guess in word:
         print("Yes!",guess,"is in the word!")
         used.append(guess)
-        so_far+=guess
         print("Used Letters:",used)
         so_far.replace("_", guess)
         guesses+=1
         if guesses==3:
-            give_up=input("Would you like to give up?")
+            give_up=input("You would'nt like to give up? (True or False)")
     else:
         print("Sorry,",guess,"is not in the word :(.")
         lives-=1    
@@ -129,4 +128,10 @@ while so_far!=word and give_up==False:
         print("Used Letters:",used)
         guesses+=1
         if guesses==3:
-            give_up=input("Would you like to give up?")
+            give_up=input("You would'nt like to give up? (True or False)")
+if so_far==word:
+    print ("Yes! You got it right! The word was:"+word.upper+"!")
+elif give_up==True:
+    print ("You gave up :'((. The word was:"+word.upper+"!")
+else:
+    print ("You ran out of lives! The word was:"+word.upper+"!")
