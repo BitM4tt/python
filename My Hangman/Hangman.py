@@ -107,18 +107,20 @@ print("The word is…\t_", end=" ")
 print(" _" * (len(word) - 1))
 so_far=""
 guess=""
-guess=input("What is your guess?")
 used=[]
 guesses=0
-while so_far!=word or give_up==False:
+give_up=False
+while so_far!=word and give_up==False:
+    guess=input("What is your guess?")
     if guess in word:
         print("Yes!",guess,"is in the word!")
         used.append(guess)
+        so_far+=guess
         print("Used Letters:",used)
-        so_far.replace(“_”, guess)
+        so_far.replace("_", guess)
         guesses+=1
         if guesses==3:
-            give_up=input(“Would you like to give up?”)
+            give_up=input("Would you like to give up?")
     else:
         print("Sorry,",guess,"is not in the word :(.")
         lives-=1    
@@ -127,4 +129,4 @@ while so_far!=word or give_up==False:
         print("Used Letters:",used)
         guesses+=1
         if guesses==3:
-            give_up=input(“Would you like to give up?”)
+            give_up=input("Would you like to give up?")
