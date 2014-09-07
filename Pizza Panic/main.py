@@ -22,6 +22,10 @@ class Chef(games.Sprite):
         n=random.randint(1,3)
         if n==2:
             games.screen.add(Pizza, x=self.x+120, y=self.y)
+    def __init__(self):
+        super(Pan, self).__init__(image=bowlimage,
+                                  x=games.mouse.x,
+                                  bottom=games.screen.height)
 class Pizza(games.Sprite):
     def update(self):
         image=games.load_image("Pizza.gif")
@@ -29,4 +33,5 @@ class Pizza(games.Sprite):
             gameovermessage=games.Message(value="GAME OVER", size=50, color=color.red, x=games.screen.width/2, y=games.screen.height/2, lifetime=5*games.screen.fps, after_death=games.screen.quit)
             games.screen.quit()
         self.y+=3
+games.screen.add(Chef)
 games.screen.mainloop()
