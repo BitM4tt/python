@@ -1,4 +1,5 @@
 import time
+import pickle
 
 #######################################
 # TextAdventure coded by Daniel Lewis #
